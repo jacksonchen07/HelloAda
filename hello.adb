@@ -2,17 +2,21 @@ with Ada.Text_IO;
 
 procedure Hello is
     use Ada.Text_IO;
+    Input: Integer; -- user input
 begin
+    
+      Put_line ("Please enter 1 for Hello or 2 for Goodbye:");
+           Get(Input);
 
-    for I in 1..6 loop
 
-        if 2 mod I = 0 then -- the first 3rd and 5th loop says hello and the 2nd 4ht and 6th loop says goodbye
-            Put_line ("Goodbye Ada!");
+       if Input = 1  then -- Input for Hello
+           Put_Line ("Hello Ada!");
+        elsiF Input = 2 then
+           Put_line ("Goodbye Ada!"); -- input for goodbye
+        else
+           Put_line ("Error, invalid input please input 1 or 2.") -- error statement          
+        end if;
     
-         else
-             Put_Line ("Hello Ada!");
-         end if;
-    
-    end loop;    
-    
+
+
 end Hello;
