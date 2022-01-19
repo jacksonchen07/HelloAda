@@ -4,6 +4,9 @@ procedure Hello is
     use Ada.Text_IO;
 begin
 
+Put_Line("Hello/Goodbye World Program: ");
+new_line; 
+
     for I in 1..6 loop
 
         if 2 mod I = 0 then -- the first 3rd and 5th loop says hello and the 2nd 4ht and 6th loop says goodbye
