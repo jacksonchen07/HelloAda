@@ -7,23 +7,22 @@ procedure Hello is
     use Ada.Strings.Unbounded;
     use Ada.Text_IO.Unbounded_IO;
     Name : Unbounded_String;
+    Input: integer; -- Integer for I/O statement    
 begin
     -- Using full package name because it would be ambigous with all the String packages
     Ada.Text_IO.Put ("What is your name? ");
     Name := To_Unbounded_String (Get_Line);
-    Put_Line ("Hi " & To_String (Name) & "!");
-
-    for I in 1 .. 6 loop
-
-        if 2 mod I = 0
-        then -- the first 3rd and 5th loop says hello and the 2nd 4ht and 6th loop says goodbye
-            Put_Line ("Goodbye Ada!");
-
+    Put_Line ("Hi " & To_String (Name) & "Please input 1 for Hello or 2 for Goodbye: "); -- Modified this for I/O statement (BK)
+    get (Input);
+    
+        if Input = 1 then -- Input for hello statement (BK) 
+           Put_Line ("Hello Ada!"); 
+            
+        elseif Input = 2 then -- Input for goodbye statement (BK)
+           Put_Line ("Goodbye Ada!"); 
         else
-            Put_Line ("Hello Ada!");
+           Put_Line ("Invalid input!"); -- Error statement (BK)
         end if;
-
-    end loop;
 
     -- Refer to line 11
     Ada.Text_IO.Put ("Bye " & To_String (Name) & "!");
