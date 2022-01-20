@@ -13,6 +13,10 @@ begin
     Name := To_Unbounded_String (Get_Line);
     Put_Line ("Hi " & To_String (Name) & "!");
 
+
+Put_Line("Hello/Goodbye World Program: ");
+new_line; 
+
     for I in 1 .. 6 loop
 
         if 2 mod I = 0
